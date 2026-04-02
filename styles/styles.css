@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
+
+:root {
+    --font-main: 'Jost', sans-serif;
+    --bg-color: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #767676;
+    --accent: #000000;
+}
+
+body {
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased; /* Para que se vea más nítida */
+}
+
 /* --- LAYOUT UTILITIES --- */
 .container {
     max-width: 1124px;
@@ -24,10 +39,13 @@
 }
 
 .nav__logo {
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-decoration: none;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.3em; 
+    text-transform: uppercase;
     color: var(--accent);
+    text-decoration: none;
 }
 
  
