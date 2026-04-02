@@ -13,6 +13,12 @@
         <nav class="nav container">
             <a href="#" class="nav__logo">LUMINE</a>
 
+            <input type="checkbox" id="nav-check" class="nav__checkbox">
+
+            <label for="nav-check" class="nav__btn">
+                <span class="nav__icon"></span>
+            </label>
+
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
@@ -29,11 +35,97 @@
     </header>
 
     <main>
+        <section class="hero container" id="home">
+            <div class="hero__content">
+                <h1 class="hero__title">Space is <br> breath of art.</h1>
+                <p class="hero__subtitle">Crafting minimalist architectural experiences that redefine modern living and functional design.</p>
+                <div class="hero__actions">
+                    <a href="#projects" class="btn btn--primary">View Our Projects</a>
+                    <a href="#contact" class="btn btn--outline">Get in touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects container" id="projects">
+            <h2 class="projects__title">Selected Works</h2>
+    
+            <div class="projects__grid">
+                <article class="project-card">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000" alt="Modern Glass Building" class="project-card__img">
+                    <div class="project-card__info">
+                        <span class="project-card__category">Commercial</span>
+                <h3 class="project-card__name">The Glass Pavilion</h3>
+             </div>
+            </article>
+
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000" alt="Minimalist House" class="project-card__img">
+                <div class="project-card__info">
+                    <span class="project-card__category">Residential</span>
+                    <h3 class="project-card__name">Vila de Lux</h3>
+                 </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000" alt="Office Interior" class="project-card__img">
+                    <div class="project-card__info">
+                        <span class="project-card__category">Interior</span>
+                        <h3 class="project-card__name">Linear Workspace</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="about container" id="about">
+            <div class="about__grid">
+                <div class="about__image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000" alt="Minimalist office space" class="about__img">
+                </div>
+                
+                <div class="about__content">
+                    <h2 class="about__title">The Studio</h2>
+                    <p class="about__text">
+                        Founded in 2026, **Lumine** is an architectural practice dedicated to the philosophy of "Less but Better". We believe that every line should have a purpose and every space should tell a story.
+                    </p>
+                    <p class="about__text">
+                        Our approach merges traditional craftsmanship with digital precision, resulting in homes that feel both timeless and ahead of their time.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact container" id="contact">
+            <div class="contact__content">
+                <h2 class="contact__title">Let's build <br> something together.</h2>
+                
+                <form action="#" class="contact__form">
+                    <div class="form__group">
+                        <input type="text" placeholder="Name" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" placeholder="Email" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <textarea placeholder="Message" class="form__input form__textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Send Message</button>
+                </form>
+                
+                <div class="contact__socials">
+                    <a href="#" class="social__link">LinkedIn</a>
+                    <a href="#" class="social__link">Instagram</a>
+                    <a href="#" class="social__link">Behance</a>
+                </div>
+            </div>
+        </section>
     </main>
-      
-    <footer>
-    <p>2026 Lumine. All rights reserved.</p>    
-</footer>
+    <footer class="footer container">
+        <div class="footer__content">
+            <p class="footer__copy">&copy; 2026 Lumine Architecture. All rights reserved.</p>
+            <div class="footer__designer">
+                Designed & Built by <a href="#" class="footer__link">N</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

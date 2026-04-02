@@ -10,17 +10,17 @@
 
 body {
     font-family: var(--font-main);
-    -webkit-font-smoothing: antialiased; /* Para que se vea más nítida */
+    -webkit-font-smoothing: antialiased; 
 }
 
-/* --- LAYOUT UTILITIES --- */
+/*  LAYOUT UTILITIES  */
 .container {
     max-width: 1124px;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
 
-/* --- HEADER & NAV --- */
+/*  HEADER & NAV  */
 .header {
     width: 100%;
     position: fixed;
@@ -32,12 +32,15 @@ body {
 }
 
 .nav {
-    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 0;
 }
 
+.nav__checkbox {
+    display: none; 
+}
 .nav__logo {
     font-family: var(--font-main);
     font-weight: 600;
@@ -48,26 +51,375 @@ body {
     text-decoration: none;
 }
 
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
  
-@media screen and (max-width: 767px) {
-    .nav__menu {
+.hero__subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-inline: auto; 
+}
+
+.hero {
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                url('https://img.freepik.com/foto-gratis/tiro-angulo-famosa-vieille-bourse-lille-francia_181624-16698.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* BUTTONS */
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 1.5rem;        
+    justify-content: center;
+    width: 100%;
+}
+
+.btn {
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn--primary {
+    background-color: var(--accent);
+    color: var(--bg-color);
+    border: 1px solid var(--accent);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.btn:hover {
+    opacity: 0.8;
+    letter-spacing: 4px; 
+}
+
+.projects {
+    padding: 100px 0;
+}
+
+.projects__title {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 3rem;
+}
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden; 
+    aspect-ratio: 1 / 1; 
+}
+
+.project-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-card__img {
+    transform: scale(1.1); 
+}
+
+.project-card__info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+/* ABOUT SECTION */
+.about {
+    padding: 100px 1.5rem; /* Espacio vertical amplio para que el diseño "respire" */
+}
+
+.about__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about__image-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.about__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.about__img:hover {
+    filter: grayscale(0%); 
+    transform: scale(1.03); 
+}
+
+.about__title {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.about__text {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/*CONTACT SECTION */
+.contact {
+    padding: 100px 1.5rem;
+    text-align: center;
+}
+
+.contact__title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 4rem;
+}
+
+.contact__form {
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form__input {
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form__input:focus {
+    border-color: var(--accent);
+}
+
+.form__textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* social media */
+.contact__socials {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social__link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.social__link:hover {
+    color: var(--text-muted);
+}
+
+/* FOOTER */
+.footer {
+    padding: 4rem 1.5rem;
+    border-top: 1px solid #eee; /* Una línea divisoria sutil */
+    text-align: center;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer__copy {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.footer__designer {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer__link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+ /* styles for MOBILE */
+@media (max-width: 768px) {
+    .nav__list {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0;
         display: none; 
+        border-bottom: 1px solid #eee;
+    }
+
+    /* show menu when checkbox is active */
+    .nav__checkbox:checked ~ .nav__list {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 8rem 1.5rem 4rem 1.5rem;
+    }
+    .hero__title {
+        font-size: clamp(2rem, 10vw, 3.5rem); 
+        font-weight: 300;
+        line-height: 1.2; 
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px; 
+    }
+    
+    .hero__subtitle {
+        font-size: 0.9rem; 
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        max-width: 100%; 
+        line-height: 1.5;
+    }
+    
+    .btn {
+        padding: 1rem 1.5rem; 
+        font-size: 0.75rem;
+        width: 100%; 
+        max-width: 280px; 
     }
 }
 
-.nav__list {
-    display: flex;
-    list-style: none;
-    column-gap: 2rem;
+/* styles for DESKTOP */
+@media (min-width: 769px) {
+    .nav__list {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+    }
+    
+    .nav__btn {
+        display: none; 
+    }
 }
 
 .nav__link {
     text-decoration: none;
     color: var(--text-main);
-    font-size: 0.9rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
     transition: 0.3s;
 }
 
 .nav__link:hover {
     color: var(--text-muted);
 }
+
+.hero__title {
+        font-size: 5rem;
+    }
+
+    .hero__actions {
+        flex-direction: row; 
+        justify-content: center;
+    }
+
+    .btn {
+        width: auto;
+    }
+    
+    .footer__content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    
+    
+    @media (min-width: 992px) {
+        .about__grid {
+            flex-direction: row; 
+            text-align: left;
+            gap: 8rem; 
+        }
+        .about__image-wrapper, 
+        .about__content {
+            flex: 1; 
+        }    
+    }
