@@ -10,17 +10,17 @@
 
 body {
     font-family: var(--font-main);
-    -webkit-font-smoothing: antialiased; /* Para que se vea más nítida */
+    -webkit-font-smoothing: antialiased; 
 }
 
-/* --- LAYOUT UTILITIES --- */
+/*  LAYOUT UTILITIES  */
 .container {
     max-width: 1124px;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
 
-/* --- HEADER & NAV --- */
+/*  HEADER & NAV  */
 .header {
     width: 100%;
     position: fixed;
@@ -51,7 +51,76 @@ body {
     text-decoration: none;
 }
 
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
  
+.hero__subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-inline: auto; 
+}
+
+.hero {
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                url('https://img.freepik.com/foto-gratis/tiro-angulo-famosa-vieille-bourse-lille-francia_181624-16698.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* BUTTONS */
+.hero__actions {
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn {
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn--primary {
+    background-color: var(--accent);
+    color: var(--bg-color);
+    border: 1px solid var(--accent);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.btn:hover {
+    opacity: 0.8;
+    letter-spacing: 4px; 
+}
+
 @media (max-width: 768px) {
     .nav__list {
         position: absolute;
@@ -99,3 +168,16 @@ body {
 .nav__link:hover {
     color: var(--text-muted);
 }
+
+.hero__title {
+        font-size: 5rem;
+    }
+
+    .hero__actions {
+        flex-direction: row; 
+        justify-content: center;
+    }
+
+    .btn {
+        width: auto;
+    }
