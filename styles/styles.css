@@ -163,6 +163,7 @@ body {
     color: white;
 }
 
+ /* styles for MOBILE */
 @media (max-width: 768px) {
     .nav__list {
         position: absolute;
@@ -182,9 +183,41 @@ body {
     .nav__checkbox:checked ~ .nav__list {
         display: flex;
     }
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 8rem 1.5rem 4rem 1.5rem;
+    }
+    .hero__title {
+        font-size: clamp(2rem, 10vw, 3.5rem); 
+        font-weight: 300;
+        line-height: 1.2; 
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px; 
+    }
+    
+    .hero__subtitle {
+        font-size: 0.9rem; 
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        max-width: 100%; 
+        line-height: 1.5;
+    }
+    
+    .btn {
+        padding: 1rem 1.5rem; 
+        font-size: 0.75rem;
+        width: 100%; 
+        max-width: 280px; 
+    }
 }
 
-/* styles for list in DESKTOP */
+/* styles for DESKTOP */
 @media (min-width: 769px) {
     .nav__list {
         display: flex;
